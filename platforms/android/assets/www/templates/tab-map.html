@@ -1,0 +1,49 @@
+<ion-view view-title="Nerdesin">
+  <ion-nav-buttons side="left">
+    <button class="button icon-left ion-planet" ng-click="goTotb()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <ion-refresher
+      pulling-text="Yenile"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+
+    <div ng-switch="loadingMode">
+
+      <!-- spinner within content when followers are loaded -->
+      <div ng-switch-when="true" style="width: 100vw; text-align: center; margin: 20px 0px">
+        <ion-spinner></ion-spinner>
+      </div>
+
+      <div ng-switch-when="false">
+
+        <ion-list>
+
+          <!-- followers list -->
+          <ion-item
+            ng-repeat="(uid, value) in FollowingList"
+            class="item item-avatar item-icon-right"
+            href="templates/bb.html">
+
+            <img ng-src="{{FollowingProfiles[uid].profilePicture || tempData.noProfilePicture}}">
+            <h2>{{FollowingProfiles[uid].meta.displayName}}</h2>
+            <p>@{{FollowingProfiles[uid].meta.username}}</p>
+
+            <i class="icon ion-ios-arrow-right"></i>
+            <ion-option-button
+              class="button-assertive"
+              ng-click="here(uid)">
+              Burdasın
+            </ion-option-button>
+
+          </ion-item>
+
+        </ion-list>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

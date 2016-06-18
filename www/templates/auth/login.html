@@ -1,0 +1,53 @@
+<ion-modal-view>
+
+  <ion-content class="login center padding">
+
+    <p>
+      <img src="img/icon_starter.png">
+    </p>
+    <h1>
+      Nerede (v1.0)
+    </h1>
+
+    <div class="list">
+      <form ng-submit="doLogin()">
+        <label class="item item-input ">
+          <input type="email" ng-model="loginData.userEmail" placeholder="E-mail">
+        </label>
+        <label class="item item-input ">
+          <input type="password" ng-model="loginData.userPassword" placeholder="Parola">
+        </label>
+      </form>
+      <button class="button button-block button-stable" ng-click="doLogin()">Oturum Aç</button>
+
+
+
+
+      <div class="row">
+        <div class="col">
+            <a class="button button-block button-stable button icon icon-center ion-social-facebook center" ng-click="doLoginSocial('facebook')"></a>
+        </div>
+        <div class="col">
+            <a class="button button-block button-stable button icon icon-center ion-social-twitter center" ng-click="doLoginSocial('twitter')"></a>
+        </div>
+        <div class="col">
+            <a class="button button-block button-stable button icon icon-center ion-social-google center" ng-click="doLoginSocial('google')"></a>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+           <button class="button button-block button-clear" ng-click="signUp()">Üye Ol</button>
+        </div>
+        <div class="col">
+          <button class="button button-block button-clear" ng-click="changePassword('lost')">Şifremi Unuttum</button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </ion-content>
+</ion-modal-view>

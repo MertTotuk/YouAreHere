@@ -1,0 +1,50 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Profil Ayarları</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="unAuth()">Çıkış Yap</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+
+      <p class="center profile">
+         <img ng-src="{{ProfileData.profilePicture || 'img/ionic.png'}}">
+      </p>
+
+      <ion-list>
+
+        <!-- Profile -->
+        <ion-item class="item item-divider">
+         Profil
+          <span class="item-note">
+            <ion-spinner ng-show="status.loadingProfile" class="spinner-small"></ion-spinner>
+          </span>
+        </ion-item>
+
+        <ion-item ng-click="changeDisplayName()">
+          İsim
+          <span class="item-note">
+            {{ProfileData.meta.displayName || 'Not set!'}}
+          </span>
+        </ion-item>
+
+        <ion-item ng-click="changeUsername()">
+          Kullanıcı Adı
+          <span class="item-note">
+            {{ProfileData.meta.username || 'Not set!'}}
+          </span>
+        </ion-item>
+
+        <ion-item ng-click="changeProfilePicture()">
+          Profil Resmi
+        </ion-item>
+        <!-- ./ Profile -->
+
+      </ion-list>
+
+      <label class="item">
+        <button class="button button-block button-stable" type="submit" ng-click="finishSetProfile()">Tamamla</button>
+      </label>
+
+  </ion-content>
+</ion-modal-view>
