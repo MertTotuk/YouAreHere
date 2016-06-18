@@ -22,7 +22,7 @@
  *
  */
 
-var FBURL                 = "https://map-chats.firebaseio.com";
+var FBURL                 = "https://YOUR FİREBASE URL";
 var POST_MAX_CHAR         = 150;
 
 angular.module('starter', [
